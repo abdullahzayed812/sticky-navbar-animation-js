@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Navigation onScroll</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .body {
+      width: 100%;
+      height: 200vh;
+      background-color: #0f1723;
+    }
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.5s;
+    }
+    .main-header.sticky {
+      padding: 20px 80px;
+      background-color: #fff;
+    }
+    .main-header .logo {
+      color: white;
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: 32px;
+    }
+    .menu {
+      display: flex;
+      align-items: center;
+    }
+    .menu-item {
+      list-style-type: none;
+    }
+    .menu-link {
+      color: white;
+      display: block;
+      margin-right: 5px;
+      font-size: 18px;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .main-header.sticky .logo,
+    .main-header.sticky .menu-link {
+      color: #333;
+    }
+    .banner {
+      width: 100%;
+      height: 200vh;
+      background-image: url('./banner.jpg');
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .banner .center h2 {
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: white;
+    }
+    .banner .center p {
+      line-height: 1.5;
+      font-size: 18px;
+      max-width: 700px;
+      color: white;
+    }
+  </style>
+  <body>
+    <section class="body">
+      <header class="main-header">
+        <a href="#" class="logo">Logo</a>
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="#" class="menu-link">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">About</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">Services</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">Team</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">Portfolio</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">Contact</a>
+          </li>
+        </ul>
+      </header>
+      <section class="banner">
+        <div class="center">
+          <h2>Sticky Navbar On Scroll</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, voluptatum facere esse tenetur inventore modi aspernatur laboriosam quaerat deleniti nulla, quam ea, eveniet error obcaecati voluptatem architecto odio provident et ipsa facilis voluptate necessitatibus deserunt placeat. In dolorem obcaecati, consectetur veritatis, ad eaque minima amet hic ducimus animi aut optio commodi, doloremque reprehenderit! Magnam, voluptatibus? Recusandae, dicta omnis. Fugiat laboriosam enim culpa totam voluptatem omnis neque velit atque possimus, dolorum labore distinctio ex blanditiis voluptatum minus vero sequi officiis? Corporis nesciunt minima labore eaque eum exercitationem vero, ea beatae quasi ratione atque expedita adipisci cum corrupti voluptas hic possimus laudantium.</p>
+        </div>
+      </section>
+    </section>
+    <script type="text/javascript">
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', function () {
+        header.classList.toggle("sticky", window.pageYOffset > 0);
+      });
+    </script>
+  </body>
+</html>
